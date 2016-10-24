@@ -84,7 +84,8 @@ public class MainFragment extends Fragment {
                     @Override
                     public void onNext(TopnewsResponse topnewsResponse) {
                         Log.d(TAG, "onNext() called with: topnewsResponse = [" + topnewsResponse.getData().getChildren().get(22).getData().getTitle() + "]");
-                        mAdapter = new TopNewsAdapter(topnewsResponse.getData().getChildren());
+//                        mAdapter = new TopNewsAdapter(topnewsResponse.getData().getChildren());
+                        mAdapter = new TopNewsAdapter(getActivity().getApplicationContext(),topnewsResponse.getData().getChildren());
                         mTopnews_Recyclerview.setAdapter(mAdapter);
                     }
                 });

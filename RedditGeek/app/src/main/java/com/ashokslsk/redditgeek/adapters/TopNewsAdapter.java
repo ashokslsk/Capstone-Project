@@ -1,13 +1,16 @@
 package com.ashokslsk.redditgeek.adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ashokslsk.redditgeek.R;
 import com.ashokslsk.redditgeek.model.TopnewsResponse;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -18,6 +21,12 @@ import java.util.List;
 public class TopNewsAdapter extends RecyclerView.Adapter<TopNewsAdapter.ViewHolder>  {
 
     List<TopnewsResponse.DataEntity.ChildrenEntity> mDataEntity;
+    private Context mContext;
+
+    public TopNewsAdapter(Context mContext, List<TopnewsResponse.DataEntity.ChildrenEntity> mDataEntity) {
+        this.mContext = mContext;
+        this.mDataEntity = mDataEntity;
+    }
 
     public TopNewsAdapter(List<TopnewsResponse.DataEntity.ChildrenEntity> mDataEntity) {
         this.mDataEntity = mDataEntity;
@@ -32,6 +41,12 @@ public class TopNewsAdapter extends RecyclerView.Adapter<TopNewsAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         viewHolder.tv_name.setText(mDataEntity.get(position).getData().getTitle());
+        viewHolder.tv_version.setText(mDataEntity.get(position).getData().getAuthor());
+        viewHolder.tv_api_level.setText(mDataEntity.get(position).getData().getNum_comments()+" Comments");
+        Picasso.with(mContext)
+                .load(mDataEntity.get(position).getData().getThumbnail())
+                .placeholder(R.drawable.iconnews)
+                .into(viewHolder.PostPicture);
 
     }
 
@@ -42,11 +57,13 @@ public class TopNewsAdapter extends RecyclerView.Adapter<TopNewsAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView tv_name,tv_version,tv_api_level;
+        private ImageView PostPicture;
         public ViewHolder(View view) {
             super(view);
-            tv_name = (TextView)view.findViewById(R.id.tv_name);
-            tv_version = (TextView)view.findViewById(R.id.tv_version);
-            tv_api_level = (TextView)view.findViewById(R.id.tv_api_level);
+            tv_name = (TextView)view.findViewById(R.id.tvTitle);
+            tv_version = (TextView)view.findViewById(R.id.tvCriticsScore);
+            tv_api_level = (TextView)view.findViewById(R.id.tvCast);
+            PostPicture = (ImageView) view.findViewById(R.id.ivPosterImage);
 
         }
     }
