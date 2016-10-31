@@ -11,5 +11,6 @@
     <color name="white">#ffffff</color>
     <color name="window_background">#FFF5F5F5</color>
     <color name="selectable_pressed">#99BDBDBD</color>
+    <color name="colorSecondary">#799dbf</color>
 
 </resources>

@@ -11,4 +11,37 @@
     <dimen name="card_insets">8dp</dimen>
     <dimen name="item_decoration">6dp</dimen>
     <dimen name="column_width">250dp</dimen>
+
+
+    <dimen name="users_list_dialog_vertical_margin">16dp</dimen>
+    <dimen name="users_list_dialog_horizontal_margin">16dp</dimen>
+    <dimen name="users_list_dialog_vertical_margin_bottom">8dp</dimen>
+    <dimen name="users_list_max_height">128dp</dimen>
+
+    <dimen name="users_list_item_margin_start">16dp</dimen>
+    <dimen name="users_list_item_margin_end">16dp</dimen>
+
+    <dimen name="drawer_header_button_width">48dp</dimen>
+    <dimen name="drawer_header_button_margin">4dp</dimen>
+    <dimen name="drawer_search_layout_height">56dp</dimen>
+
+    <dimen name="drawer_header_elevation">2dp</dimen>
+
+    <item name="image_height_to_view_height_ratio" format="float" type="dimen">0.6</item>
+    <item name="links_list_item_height_multiplier" format="float" type="dimen">2</item>
+    <item name="view_width_ratio_left_ignore_horiz_swipe" format="float" type="dimen">0.1</item>
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+    <dimen name="widget_margin">0dp</dimen>
+    <dimen name="widget_no_info_text_size">12sp</dimen>
+    <dimen name="widget_list_item_width">100dp</dimen>
+    <dimen name="widget_list_item_height">100dp</dimen>
+    <dimen name="widget_list_order_num_text_size">10sp</dimen>
+    <dimen name="widget_list_item_subrddt_text_size">10sp</dimen>
+    <dimen name="widget_list_item_title_text_size">10sp</dimen>
+    <dimen name="widget_list_item_num_cmnts_text_size">10sp</dimen>
+    <dimen name="widget_list_item_score_text_size">10sp</dimen>
+
+    <dimen name="widget_list_item_order_num_padding_horiz">4dp</dimen>
+    <dimen name="widget_list_item_order_num_padding_vert">2dp</dimen>
 </resources>

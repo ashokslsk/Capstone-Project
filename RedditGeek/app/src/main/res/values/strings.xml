@@ -1,3 +1,90 @@
 <resources>
     <string name="app_name">Reddit Geek</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="menu_settings">Settings</string>
+    <string name="menu_open_external">Open External</string>
+    <string name="menu_copy_url">Copy URL</string>
+    <string name="menu_refresh_comments">Refresh Comments</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_share_link">Share</string>
+
+    <string name="button_caption_ok">OK</string>
+    <string name="button_caption_cancel">Cancel</string>
+    <string name="select_user_dialog_title">Choose an account</string>
+
+    <string name="user_name_design_time">user_name</string>
+    <string name="subreddit_name_design_time">subreddit_name</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>'
+
+    <string name="log_in">Log in</string>
+    <string name="new_user">New user</string>
+    <string name="anonymous">Anonymous</string>
+
+    <string name="unsubsc_success_message">Unsubscribed from \'%s\'</string>
+    <string name="subscr_success_message">Subscribed to \'%s\'</string>
+    <string name="unsubsc_failure_message">Failed to unsubscribe, error %d</string>
+    <string name="subscr_failure_message">Failed to subscribe, error %d</string>
+    <string name="unsubsc_failure_message_anonym">Failed to unsubscribe</string>
+    <string name="subscr_failure_message_anonym">Failed to subscribe</string>
+    <string name="unsubscr_hint">Double tap to unsubscribe</string>
+
+    <string name="search_hint">Type a community name</string>
+    <string name="search_success_message">Found %d matches</string>
+    <string name="search_failure_message">Search failed, error %d</string>
+    <string name="empty_search_string">Search string is empty</string>
+
+    <string name="authoriz_failed">Reddit authorization failed</string>
+
+    <string name="num_commments">%d comments</string>
+    <string name="subreddit_name">r/%s</string>
+    <string name="subreddit_prefix">r/</string>
+    <string name="position_format_str">%1$s%2$d/%3$d%4$s</string>
+    <string name="title_activity_link_with_comments">@string/app_name</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="loading_comments">Loading comments...</string>
+
+    <string name="cliboard_label">URL from Eqv Viewer for Reddit</string>
+    <string name="clipboard_text">URL copied to clipboard</string>
+
+    <string name="pref_nsfw_title">NSFW filtering</string>
+    <string name="pref_nsfw_summary">Hide posts with adult content</string>
+    <string name="pref_nsfw_key">pref_key_nsfw</string>
+
+    <string name="pref_dev_title">Developer</string>
+    <string name="pref_dev_summary">Alexander Starostin</string>
+    <string name="pref_dev_key">pref_dev_key</string>
+
+    <string name="pref_buildnum_title">Version</string>
+    <string name="pref_buildnum_summary">-1.-1</string>
+    <string name="pref_buildnum_key">pref_buildnum_key</string>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="cd_start_search">start search</string>
+    <string name="cd_remove_user">remove user name from list of saved users</string>
+    <string name="cd_select_user">select user from list of saved users</string>
+    <string name="cd_change_subscription">remove or add subreddit from or to subscription</string>
+    <string name="cd_login_or_logout">Log in or log out from subreddit.com</string>
+    <string name="cd_drawer_menu">drawer menu</string>
+
+    <string name="empty_widget_view_text">No subreddit links available :(</string>
+
+    <string name="test_link_subreddit_name" translatable="false">r/Jokes</string>
+    <string name="test_link_title" translatable="false">Lorem ipsum amet mi tristique turpis dapibus felis eget facilisis aliquam velit nullam.</string>
+    <string name="test_link_num_comments" translatable="false">000</string>
+    <string name="test_link_score" translatable="false">0000</string>
+    <string name="test_link_num_links" translatable="false">00</string>
+    <string name="test_link_list_order_num" translatable="false">00</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
 </resources>
