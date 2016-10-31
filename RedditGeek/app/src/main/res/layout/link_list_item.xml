@@ -8,6 +8,8 @@
     android:layout_gravity="center"
     android:layout_margin="10dp"
     card_view:cardCornerRadius="2dp"
+    card_view:cardElevation="10dp"
+    card_view:cardBackgroundColor="@color/card_back"
     card_view:contentPadding="10dp">
 
     <LinearLayout

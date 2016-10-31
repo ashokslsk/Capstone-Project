@@ -45,28 +45,28 @@ public class LinkWithCommentsActivity extends AppCompatActivity implements
 
     private static final int LINKS_PAGER_LOADER = 0;
 
-    static final int COL_LINK_ROWID = 0;
-    static final int COL_POSITION = 1;
-    static final int COL_ID = 2;
-    static final int COL_TITLE = 3;
-    static final int COL_DOMAIN = 4;
-    static final int COL_AUTHOR = 5;
-    static final int COL_SCORE = 6;
-    static final int COL_NUM_COMMENTS = 7;
-    static final int COL_POST_HINT = 8;
-    static final int COL_STICKIED = 9;
-    static final int COL_OVER_18 = 10;
-    static final int COL_AUTHOR_FL_TEXT = 11;
-    static final int COL_SLFTXT_HTML = 12;
-    static final int COL_SLFTXT = 13;
-    static final int COL_CREATED_UTC = 14;
-    static final int COL_URL = 15;
-    static final int COL_IMG_PORT = 16;
-    static final int COL_IMG_PORT_WIDTH = 17;
-    static final int COL_IMG_PORT_HEIGHT = 18;
-    static final int COL_IMG_LAND = 19;
-    static final int COL_IMG_LAND_WIDTH = 20;
-    static final int COL_IMG_LAND_HEIGHT = 21;
+    public static final int COL_LINK_ROWID = 0;
+    public static final int COL_POSITION = 1;
+    public static final int COL_ID = 2;
+    public static final int COL_TITLE = 3;
+    public static final int COL_DOMAIN = 4;
+    public static final int COL_AUTHOR = 5;
+    public static final int COL_SCORE = 6;
+    public static final int COL_NUM_COMMENTS = 7;
+    public static final int COL_POST_HINT = 8;
+    public static final int COL_STICKIED = 9;
+    public static final int COL_OVER_18 = 10;
+    public static final int COL_AUTHOR_FL_TEXT = 11;
+    public static final int COL_SLFTXT_HTML = 12;
+    public static final int COL_SLFTXT = 13;
+    public static final int COL_CREATED_UTC = 14;
+    public static final int COL_URL = 15;
+    public static final int COL_IMG_PORT = 16;
+    public static final int COL_IMG_PORT_WIDTH = 17;
+    public static final int COL_IMG_PORT_HEIGHT = 18;
+    public static final int COL_IMG_LAND = 19;
+    public static final int COL_IMG_LAND_WIDTH = 20;
+    public static final int COL_IMG_LAND_HEIGHT = 21;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,9 +110,11 @@ public class LinkWithCommentsActivity extends AppCompatActivity implements
                         setShareIntent(sendIntent);
                     }
                 }
+
                 @Override
                 public void onPageSelected(int position) {
                 }
+
                 @Override
                 public void onPageScrollStateChanged(int state) {
                 }
@@ -140,7 +142,7 @@ public class LinkWithCommentsActivity extends AppCompatActivity implements
         return mCursorLinks.getString(COL_URL);
     }
 
-    public void onLinkClick (View view) {
+    public void onLinkClick(View view) {
         if (mCursorLinks == null || mCursorLinks.isClosed() ||
                 !mCursorLinks.moveToPosition(mViewPager.getCurrentItem()))
             return;
@@ -236,7 +238,6 @@ public class LinkWithCommentsActivity extends AppCompatActivity implements
         }
 
 
-
         @Override
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
@@ -244,14 +245,17 @@ public class LinkWithCommentsActivity extends AppCompatActivity implements
             return PlaceholderFragment.newInstance(position, getIntent().getExtras(), mCursorLinks,
                     LinkWithCommentsActivity.this);
         }
+
         @Override
         public int getCount() {
             return mLinkCount;
         }
+
         @Override
         public CharSequence getPageTitle(int position) {
             return null;
         }
+
         public int getItemPosition(Object object) {
             return POSITION_NONE;
         }

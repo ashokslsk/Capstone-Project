@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/window_background</item>
+
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <item name="android:popupMenuStyle">@style/PopupMenu</item>
     </style>
@@ -20,13 +21,17 @@
     </style>
 
     <style name="PopupMenu" parent="@android:style/Widget.PopupMenu">
+
         <item name="android:popupBackground">@android:color/white</item>
         <item name="android:textColorSecondary">@color/white</item>
+
     </style>
 
     <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+
         <item name="spinBars">true</item>
         <item name="color">@android:color/white</item>
+
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar" />
