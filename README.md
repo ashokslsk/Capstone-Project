@@ -5,7 +5,7 @@ This project is udacity final capstone submission.
 
 ![Library screen](https://github.com/ashokslsk/Capstone-Project/blob/master/RedditGeek/screens/debug/Widgetscreen.png)
 ![Library screen](https://github.com/ashokslsk/Capstone-Project/blob/master/RedditGeek/screens/debug/Widget_Stack.png)
-![https://github.com/ashokslsk/Capstone-Project/blob/master/RedditGeek/screens/debug/Landing.png)
+![landing screen](https://github.com/ashokslsk/Capstone-Project/blob/master/RedditGeek/screens/debug/Landing.png)
 
 
 More documentation is coming soon...
