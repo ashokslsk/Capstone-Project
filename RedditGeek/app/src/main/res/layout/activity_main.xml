@@ -13,7 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -25,43 +24,43 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <include layout="@layout/navigation_header_main" />
+
+            <include layout="@layout/nav_header_main" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/drawer_search_layout_height"
-                android:orientation="horizontal"
-                android:background="@color/colorPrimaryDark"
                 android:elevation="@dimen/drawer_header_elevation"
-                >
+                android:theme="@style/ThemeOverlay.AppCompat.Light"
+                android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/search_box"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/activity_horizontal_margin"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:layout_toLeftOf="@+id/start_search"
                     android:layout_toStartOf="@+id/start_search"
-                    android:layout_centerVertical="true"
                     android:focusable="true"
                     android:hint="@string/search_hint"
-                    android:inputType="text"
-                    android:imeOptions="actionSearch" />
+                    android:imeOptions="actionSearch"
+                    android:inputType="text" />
 
                 <ImageButton
                     android:id="@+id/start_search"
-                    android:layout_height="wrap_content"
-                    android:layout_width="@dimen/drawer_header_button_width"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:focusable="true"
-                    android:contentDescription="@string/cd_start_search"
                     style="?android:attr/borderlessButtonStyle"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp"/>
+                    android:layout_width="@dimen/drawer_header_button_width"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/cd_start_search"
+                    android:focusable="true"
+                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
 
             </RelativeLayout>
 
@@ -73,7 +72,7 @@
                 <ListView
                     android:id="@+id/subredditList"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
 
             </android.support.v4.widget.SwipeRefreshLayout>
 

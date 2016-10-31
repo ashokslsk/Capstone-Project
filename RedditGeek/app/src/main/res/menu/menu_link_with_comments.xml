@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".LinkWithCommentsActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/menu_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_refresh_comments"
+        android:orderInCategory="200"
+        android:title="@string/menu_refresh_comments"
+        app:showAsAction="never" />
+    <!--<item-->
+        <!--android:id="@+id/action_share_link"-->
+        <!--android:orderInCategory="300"-->
+        <!--android:title="@string/menu_share_link"-->
+        <!--app:showAsAction="never" />-->
+    <item
+        android:id="@+id/action_share_link"
+        android:title="@string/menu_share_link"
+        android:orderInCategory="300"
+        app:showAsAction="never"
+        app:actionProviderClass="android.support.v7.widget.ShareActionProvider" />
+</menu>
