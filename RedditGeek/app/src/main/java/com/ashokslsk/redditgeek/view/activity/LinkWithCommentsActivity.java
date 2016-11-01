@@ -24,6 +24,9 @@ import com.ashokslsk.redditgeek.utils.Constants;
 import com.ashokslsk.redditgeek.utils.RedditContract;
 import com.ashokslsk.redditgeek.utils.Util;
 import com.ashokslsk.redditgeek.view.fragments.PlaceholderFragment;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 /**
  * Created by ashok.kumar on 31/10/16.
@@ -72,6 +75,15 @@ public class LinkWithCommentsActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_link_with_comments);
+
+        MobileAds.initialize(getApplicationContext(), getResources().getString(R.string.banner_ad_unit_id));
+
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+
+        mAdView.loadAd(adRequest);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

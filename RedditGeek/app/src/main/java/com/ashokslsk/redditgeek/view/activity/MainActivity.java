@@ -48,6 +48,10 @@ import com.ashokslsk.redditgeek.utils.RedditContract.SubredditEntry;
 import com.ashokslsk.redditgeek.utils.RedditContract.SubredditSearchEntry;
 import com.ashokslsk.redditgeek.utils.SelectUserDialog;
 import com.ashokslsk.redditgeek.utils.Util;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 
 public class MainActivity extends AppCompatActivity
@@ -55,6 +59,10 @@ public class MainActivity extends AppCompatActivity
         LoaderManager.LoaderCallbacks<Cursor>, PopupMenu.OnMenuItemClickListener  {
 
     public static final String LOG_TAG = MainActivity.class.getSimpleName();
+
+    private AdView mAdView;
+    private FirebaseAnalytics mFirebaseAnlytics;
+
 
     private SubredditListAdapter mSubrdtListAdapter;
     private LinkListAdapter mLinkListAdapter;
@@ -156,7 +164,25 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
+        mFirebaseAnlytics = FirebaseAnalytics.getInstance(this);
 
+
+// Initialize the Mobile Ads SDK.
+        MobileAds.initialize(this, getResources().getString(R.string.banner_ad_unit_id));
+
+        // Gets the ad view defined in layout/ad_fragment.xml with ad unit ID set in
+        // values/strings.xml.
+        mAdView = (AdView) findViewById(R.id.adView);
+
+        // Create an ad request. Check your logcat output for the hashed device ID to
+        // get test ads on a physical device. e.g.
+        // "Use AdRequest.Builder.addTestDevice("ABCDEF012345") to get test ads on this device."
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+
+        // Start loading the ad in the background.
+        mAdView.loadAd(adRequest);
         //Set up navigation drawer
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -209,13 +235,23 @@ public class MainActivity extends AppCompatActivity
         if (mLinkListView != null) {
             mLinkListView.setAdapter(mLinkListAdapter);
             mLinkListView.setDividerHeight(4);
-            mLinkListView.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    mLinkListAdapter.getGestureDetector().onTouchEvent(event);
-                    return mLinkListView.onTouchEvent(event);
-                }
-            });
+            try {
+                mLinkListView.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+
+                        try {
+                            mLinkListAdapter.getGestureDetector().onTouchEvent(event);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        return mLinkListView.onTouchEvent(event);
+                        }
+
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         getLoaderManager().initLoader(LINK_LIST_LOADER, null, this);
 
@@ -494,6 +530,10 @@ public class MainActivity extends AppCompatActivity
             tvUserName.setText(getString(R.string.log_in));
             btnLogInOrOut.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.login));
         } else {
+            Bundle bundle = new Bundle();
+            bundle.putString(FirebaseAnalytics.Param.ITEM_NAME,userName);
+            bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE,"USERNAME");
+            mFirebaseAnlytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT,bundle);
             tvUserName.setText(userName);
             btnLogInOrOut.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.logout));
         }

@@ -4,6 +4,9 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="banner_ad_unit_id">ca-app-pub-2663565097190279/8304447745</string>
+
+
     <string name="menu_settings">Settings</string>
     <string name="menu_open_external">Open External</string>
     <string name="menu_copy_url">Copy URL</string>

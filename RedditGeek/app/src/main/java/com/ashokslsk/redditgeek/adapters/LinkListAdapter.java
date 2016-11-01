@@ -159,13 +159,21 @@ public class LinkListAdapter extends CursorAdapter {
             int curPos = mListView.pointToPosition((int)e.getX(), (int)e.getY());
             Cursor c = (Cursor)getItem(curPos);
             if (c != null) {
-                Intent intent = new Intent(mActivity, LinkWithCommentsActivity.class);
-                intent.putExtra(Constants.EXTRA_SUBREDDIT_NAME,
-                        c.getString(MainActivity.COL_SUBREDDIT));
-                intent.putExtra(Constants.EXTRA_LINK_COUNT, c.getInt(MainActivity.COL_COUNT));
-                intent.putExtra(Constants.EXTRA_LINK_POSITION, c.getInt(MainActivity.COL_POSITION));
-                intent.setAction(Constants.ACTION_SHOW_LINKS_FOR_SUBREDDIT);
-                mActivity.startActivity(intent);
+                try {
+                    Intent intent = new Intent(mActivity, LinkWithCommentsActivity.class);
+                    try {
+                        intent.putExtra(Constants.EXTRA_SUBREDDIT_NAME,
+                                c.getString(MainActivity.COL_SUBREDDIT));
+                    } catch (Exception e1) {
+                        e1.printStackTrace();
+                    }
+                    intent.putExtra(Constants.EXTRA_LINK_COUNT, c.getInt(MainActivity.COL_COUNT));
+                    intent.putExtra(Constants.EXTRA_LINK_POSITION, c.getInt(MainActivity.COL_POSITION));
+                    intent.setAction(Constants.ACTION_SHOW_LINKS_FOR_SUBREDDIT);
+                    mActivity.startActivity(intent);
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
             }
             return true;
         }
