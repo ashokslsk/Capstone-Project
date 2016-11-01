@@ -91,5 +91,11 @@
     <string name="pref_header_general">General</string>
     <string name="view_list">View as list</string>
     <string name="view_grid">View as grid</string>
+    <string name="LOGT_TAG_shouldoverrideUrlLoading">"shouldOverrideUrlLoading, url: "</string>
+    <string name="LOG_TAG_on_page_started">"onPageStarted, url: "</string>
+    <string name="LOG_TAG_onpagefinished">"onPageFinished, url: "</string>
+    <string name="TOAST_AUTH_ERROR">"Authorization error: "</string>
+    <string name="TOAST_ERROR">Authorization error: unexpected state \'</string>
+    <string name="ACCESS_DENIED">access_denied</string>
 
 </resources>

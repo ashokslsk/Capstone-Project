@@ -54,7 +54,7 @@ public class LinkWebViewActivity extends AppCompatActivity {
         mWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                Log.i(LOG_TAG, "shouldOverrideUrlLoading, url: " + url);
+                Log.i(LOG_TAG, getString(R.string.LOGT_TAG_shouldoverrideUrlLoading) + url);
                 for (String s : Constants.OPEN_EXTERNAL) {
                     if (url.contains(s)) {
                         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
@@ -66,12 +66,12 @@ public class LinkWebViewActivity extends AppCompatActivity {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
-                Log.i(LOG_TAG, "onPageStarted, url: " + url);
+                Log.i(LOG_TAG, getString(R.string.LOG_TAG_on_page_started) + url);
             }
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                Log.i(LOG_TAG, "onPageFinished, url: " + url);
+                Log.i(LOG_TAG, getString(R.string.LOG_TAG_onpagefinished) + url);
             }
         });
     }

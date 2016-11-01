@@ -53,18 +53,18 @@ public class RedditAuthorizationActivity extends AppCompatActivity {
             boolean isCodeReceived = false;
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                Log.i(LOG_TAG, "shouldOverrideUrlLoading, url: " + url);
+                Log.i(LOG_TAG, getString(R.string.LOGT_TAG_shouldoverrideUrlLoading) + url);
                 return false;
             }
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
-                Log.i(LOG_TAG, "onPageStarted, url: " + url);
+                Log.i(LOG_TAG, getString(R.string.LOG_TAG_on_page_started) + url);
             }
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                Log.i(LOG_TAG, "onPageFinished, url: " + url);
+                Log.i(LOG_TAG, getString(R.string.LOG_TAG_onpagefinished) + url);
 
                 if (isCodeReceived) return;
                 Uri uri = Uri.parse(url);
@@ -82,7 +82,7 @@ public class RedditAuthorizationActivity extends AppCompatActivity {
                             activityResultCode = RESULT_OK;
                         } else {
                             Toast.makeText(RedditAuthorizationActivity.this,
-                                    "Authorization error: unexpected state '" +
+                                    getString(R.string.TOAST_ERROR) +
                                             (state == null ? "null" : state) + "'", Toast.LENGTH_LONG)
                                     .show();
                         }
@@ -90,8 +90,8 @@ public class RedditAuthorizationActivity extends AppCompatActivity {
                     }
                 } else {
                     Toast.makeText(RedditAuthorizationActivity.this,
-                            "Authorization error: " + error, Toast.LENGTH_LONG).show();
-                    if (error.equals("access_denied")) canCloseDialog = true;
+                            getString(R.string.TOAST_AUTH_ERROR) + error, Toast.LENGTH_LONG).show();
+                    if (error.equals(getString(R.string.ACCESS_DENIED))) canCloseDialog = true;
                 }
                 RedditAuthorizationActivity.this.setResult(activityResultCode);
                 if (canCloseDialog) RedditAuthorizationActivity.this.finish();
